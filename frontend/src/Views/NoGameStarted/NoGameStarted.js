@@ -4,6 +4,7 @@ import { Wrapper, NoGameLabel, StartGameButton } from "./NoGameStarted.styles";
 
 const NoGameStarted = () => {
   const { startGame } = useGameContext();
+
   return (
     <Wrapper>
       <NoGameLabel>no game started</NoGameLabel>
