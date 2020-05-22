@@ -1,11 +1,13 @@
 import React from "react";
+import { useGameContext } from "../../Context/GameContext";
 import { Wrapper, NoGameLabel, StartGameButton } from "./NoGameStarted.styles";
 
-const NoGameStarted = ({ setIsGameStarted }) => {
+const NoGameStarted = () => {
+  const { startGame } = useGameContext();
   return (
     <Wrapper>
       <NoGameLabel>no game started</NoGameLabel>
-      <StartGameButton onClick={setIsGameStarted}>start a game</StartGameButton>
+      <StartGameButton onClick={startGame}>start a game</StartGameButton>
     </Wrapper>
   );
 };

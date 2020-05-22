@@ -1,7 +1,10 @@
 import React from "react";
+import { useGameContext } from "../../../Context/GameContext";
 import { Wrapper, TeamWrapper, TeamTitle, Player } from "./Teams.styles";
 
-const Teams = ({ teams }) => {
+const Teams = () => {
+  const { teams } = useGameContext();
+
   return (
     <Wrapper>
       <TeamWrapper>

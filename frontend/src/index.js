@@ -5,13 +5,16 @@ import * as serviceWorker from "./serviceWorker";
 import { ThemeProvider } from "styled-components";
 import { TelnessChessTheme } from "./Theme/Theme";
 import { GlobalStyle } from "./Theme/GlobalStyle";
+import GameContextProvider from "./Context/GameContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <ThemeProvider theme={TelnessChessTheme}>
-      <App />
-    </ThemeProvider>
+    <GameContextProvider>
+      <GlobalStyle />
+      <ThemeProvider theme={TelnessChessTheme}>
+        <App />
+      </ThemeProvider>
+    </GameContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

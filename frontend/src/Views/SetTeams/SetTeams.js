@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useGameContext } from "../../Context/GameContext";
 import {
   Wrapper,
   Header,
@@ -12,11 +13,13 @@ import {
 
 //to do: edit names before submitting team
 
-const SetTeams = ({ setIsTeamsSet, setTeams }) => {
+const SetTeams = () => {
   const [isTeamXSet, setIsTeamXSet] = useState(false);
   const [teamX, setTeamX] = useState([]);
   const [teamO, setTeamO] = useState([]);
   const [player, setPlayer] = useState("");
+
+  const { setTeams, confirmTeamsSet } = useGameContext();
 
   return (
     <Wrapper>
@@ -48,7 +51,7 @@ const SetTeams = ({ setIsTeamsSet, setTeams }) => {
               ? () => setIsTeamXSet(true)
               : () => {
                   setTeams({ teamX, teamO });
-                  setIsTeamsSet(true);
+                  confirmTeamsSet();
                 }
           }
         >
