@@ -4,11 +4,9 @@ import Teams from "./Teams";
 import { Wrapper } from "./GameActive.styles";
 
 const GameActive = () => {
-  const { teams } = useGameContext;
-
   return (
     <Wrapper>
-      <Teams teams={teams} />
+      <Teams />
     </Wrapper>
   );
 };
